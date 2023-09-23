@@ -1,0 +1,12 @@
+@import url('../../styles.css');
+
+.header-content {
+    background-color: #FFE1F8;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
