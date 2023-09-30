@@ -6,11 +6,22 @@
     list-style: none;
     text-decoration: none;
     font-family: sans-serif;
-
+    transition: .2s;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #FFE1F8;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #41271F;
+    box-shadow: 0px 0px 6px 6px rgba(52, 31, 25, 0.25) inset;
+}
+
+
 header {
-    width: 100vw;
+    width: 100%;
     height: 128px;
     display: flex;
     justify-content: space-between;
@@ -18,6 +29,9 @@ header {
     background: #FFE1F8;
     box-sizing: border-box;
     padding: 0 165px;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 header .logoContainer {
@@ -64,20 +78,23 @@ header nav ul li a {
 }
 
 header nav img {
-    width: 70px;
+    width: 30px;
 }
 
 img[src="../../assets/banner_Saito 2.svg"] {
-    width: 100vw;
+    width: 100%;
+    margin-top: 128px;
+    z-index: 999 !important;
 }
 
 section {
-    width: 100vw;
+    width: 100%;
     height: 96px;
     background: #FFE1F8;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -4px;
 }
 
 section p {
@@ -86,4 +103,221 @@ section p {
     font-size: 21px;
     font-style: normal;
     font-weight: 400;
+}
+
+h2 {
+    color: #000;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 80px auto;
+    width: 846px;
+
+}
+
+h2 span {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+
+.mainFlavorsContainer {
+    width: 1110px;
+    height: 466px;
+    margin: 0 auto;
+    border-top: solid 1px black;
+}
+
+.mainFlavorsContainer h1 {
+    text-align: center;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.5px;
+    margin: 34px auto 34px auto;
+}
+
+.mainFlavorsContainer .mainFlavors {
+    width: 990px;
+    height: 360px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.mainFlavorsContainer .mainFlavors .cardContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.mainFlavorsContainer .mainFlavors .cardContainer:hover {
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+
+
+.mainFlavors .cardContainer .cardName {
+    width: 94%;
+    height: 32px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 225, 248, 0.60);
+    bottom: 24px;
+}
+
+.mainFlavors .cardContainer .cardName p {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 31.5px;
+}
+
+.offersContainer {
+    width: 1140px;
+    height: 578px;
+    margin: auto;
+}
+
+.titleOffers {
+    width: 1140px;
+    height: 96px;
+    border-radius: 20px;
+    background: #FFCDBC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 56px 0;
+}
+
+.titleOffers img {
+    width: 35px;
+}
+
+.titleOffers p {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.offersContainer .offers {
+    width: 100%;
+    height: 432px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.offersContainer .offers .cardOffers {
+    width: 262px;
+    height: 432px;
+    background: #FFCDBC;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.offersContainer .offers .cardOffers h1 {
+    width: 100%;
+    text-align: start;
+    box-sizing: border-box;
+    padding-left: 15px;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    margin-bottom: 15px;
+}
+
+.offersContainer .offers .cardOffers img {
+    width: 234px;
+    height: 234px;
+}
+
+.offersContainer .offers .cardOffers p {
+    color: #341F19;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31.5px;
+    margin: 20px 0;
+}
+
+.offersContainer .offers .cardOffers button {
+    width: 128px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #341F19;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    color: #FFF;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 24px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.offersContainer .offers .cardOffers button:hover {
+    transition: .2s;
+    box-shadow: 0 0 10px #341F19;
+}
+
+footer {
+    width: 100%;
+    height: 260px;
+    box-sizing: border-box;
+    padding: 0 165px;
+    display: flex;
+    background: #41271F;
+    margin-top: 80px;
+}
+
+img[src="../../assets/footer_Logo.svg"] {
+    width: 170px;
+}
+
+.whatsapp {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+}
+
+.whatsapp img {
+    width: 100%;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
 }
