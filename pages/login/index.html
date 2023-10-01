@@ -20,19 +20,12 @@
     <nav>
 
       <ul>
-
         <li>
           <a href="/pages/home">Produtos | </a>
         </li>
-
         <li>
           <a href="#/">Onde Encontrar | </a>
         </li>
-
-        <li>
-          <a href="#/">Contato | </a>
-        </li>
-
       </ul>
 
       <img onclick="redirect()" class="btn-login" src="../../assets/btn_Login_Done.svg" alt="">
@@ -47,10 +40,24 @@
     <div class="login-interaction">
       <form id="login-form">
         <label class="login-input-label" for="username">Login</label><br>
-        <input class="login-input" type="text" placeholder="E-mail" name="username" id="username" required><br>
+        <input 
+          class="login-input" 
+          type="text" 
+          placeholder="E-mail" 
+          name="username" 
+          id="username" 
+          required
+        ><br>
 
         <label class="login-input-label" for="password">Senha</label><br>
-        <input class="login-input" type="text" placeholder="Senha" name="password" id="password" required><br>
+        <input 
+          class="login-input" 
+          type="text" 
+          placeholder="Senha" 
+          name="password" 
+          id="password" 
+          required
+        ><br>
       </form>
       <p id="error-message" class="error-message"></p>
 

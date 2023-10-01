@@ -36,3 +36,7 @@ function registerNewUser(event) {
 
     }
 }
+
+function redirect() {
+    window.location.href = '../login'
+  }
