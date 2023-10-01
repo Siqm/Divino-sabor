@@ -42,23 +42,40 @@
     <img class="login-icon" src="../../assets/login_Icon.svg" alt="">
 
     <div class="login-interaction">
-      <form action="">
-        <label class="login-input-label" for="">Login</label><br>
-        <input class="login-input" type="text" placeholder="E-mail"><br>
+      <form id="login-form">
+        <label class="login-input-label" for="username">Login</label><br>
+        <input 
+          class="login-input" 
+          type="text" 
+          placeholder="E-mail"
+          name="username"
+          id="username"
+          required
+        ><br>
 
-        <label class="login-input-label" for="">Senha</label><br>
-        <input class="login-input" type="text" placeholder="Senha"><br>
+        <label class="login-input-label" for="password">Senha</label><br>
+        <input 
+          class="login-input" 
+          type="text" 
+          placeholder="Senha"
+          name="password"
+          id="password"
+          required
+          ><br>
       </form>
+      <p id="error-message"></p>
 
       <a class="login-options" href="">Esqueceu a senha?</a>
 
 
       <label class="login-options" for=""><input type="checkbox">Lembrar senha</label><br>
 
-      <button>Login</button>
+      <button onclick="setupLoginForm()">Login</button>
       <button>Cadastrar-se</button>
     </div>
   </div>
+
+  <script src="../../js/script.js"></script>
 </body>
 
 </html>

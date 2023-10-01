@@ -321,3 +321,7 @@ img[src="../../assets/footer_Logo.svg"] {
 .whatsapp:hover {
     transform: scale(1.1);
 }
+
+.btn-login:hover {
+    cursor:pointer ;
+}
