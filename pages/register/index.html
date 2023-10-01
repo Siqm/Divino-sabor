@@ -1,11 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Saito-sama | Cadastro</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../home/styles.css"> -->
 </head>
+
 <body>
-  
+  <header>
+    <div class="logoContainer">
+      <img src="../../assets/logo_Image.svg" alt="Logo Confeitaria Divino Sabor">
+      <h1 class="header-title">Divino sabor</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/pages/home">Produtos | </a>
+        </li>
+
+        <li>
+          <a href="#/">Onde Encontrar | </a>
+        </li>
+
+        <li>
+          <a href="#/">Contato | </a>
+        </li>
+      </ul>
+
+      <img onclick="redirect()" class="btn-login" src="../../assets/btn_Login_Done.svg" alt="">
+    </nav>
+
+  </header>
+
+  <div class="login-container">
+    <img class="login-icon" src="../../assets/login_Icon.svg" alt="">
+
+    <div class="login-interaction">
+      <form id="login-form" onsubmit="registerNewUser(event)">
+
+        <label class="login-input-label" for="username">Nome</label><br>
+        <input 
+          class="login-input" 
+          type="text" 
+          placeholder="Digite seu nome" 
+          name="name" 
+          id="register-name"
+          required
+        ><br>
+
+        <label class="login-input-label" for="email">Email</label><br>
+        <input 
+          class="login-input" 
+          type="email" 
+          placeholder="Digite seu E-mail" 
+          name="email" 
+          id="register-email"
+          required
+        ><br>
+
+        <label class="login-input-label" for="password">Senha</label><br>
+        <input 
+          class="login-input" 
+          type="password" 
+          placeholder="Digite sua Senha" 
+          name="password" 
+          id="register-password"
+          required
+        ><br>
+
+        <label class="login-input-label" for="password">
+          Endereço 
+        </label><br>
+        <input 
+          class="login-input" 
+          type="text" 
+          placeholder="Digite seu endereço" 
+          name="address"
+          id="register-address" 
+          required
+        ><br>
+        <p id="error-message" class="error-message"></p>
+
+        <input type="submit" value="Cadastrar" class="submit-register">
+      </form>
+
+    </div>
+  </div>
+
+  <script src="../../js/register.js"></script>
 </body>
+
 </html>

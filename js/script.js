@@ -1,167 +1,114 @@
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    smoothScroll();
+document.addEventListener('DOMContentLoaded', function () {
+  smoothScroll();
 
 });
 
-function setupLoginForm() {
-    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$*&@#])(?:([0-9a-zA-Z$*&@#])(?!\1)){8,}$/
-    const errorMessage = document.getElementById("error-message");
-
-    const username = document.getElementById("username");
-    const password = document.getElementById("password");
-
-    if (username.value === "usuario" && regex.test(password.value)) {
-        // Autenticação bem-sucedida
-        errorMessage.textContent = "Login bem-sucedido!";
-        errorMessage.style.color = "green";
-
-
-    } else {
-        // Autenticação falhou
-        errorMessage.textContent = "Usuário ou senha inválidos.";
-        errorMessage.style.color = "red";
-        username.value = ""
-        password.value = ""
-    }
-}
-
 function smoothScroll() {
-    // Selecione todos os links <a> com href começando com #
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        // Adicione um evento de clique para cada link
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Evite o comportamento de rolagem padrão
+  // Selecione todos os links <a> com href começando com #
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Adicione um evento de clique para cada link
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault(); // Evite o comportamento de rolagem padrão
 
-            const targetId = this.getAttribute('href').substring(1); // Obtenha o ID do alvo (removendo o #)
-            const targetElement = document.getElementById(targetId); // Encontre o elemento de destino
+      const targetId = this.getAttribute('href').substring(1); // Obtenha o ID do alvo (removendo o #)
+      const targetElement = document.getElementById(targetId); // Encontre o elemento de destino
 
-            if (targetElement) {
-                // Role suavemente para o elemento alvo
-                const headerHeight = 128
-                window.scrollTo({
-                    top: targetElement.offsetTop - headerHeight, // Altura do elemento alvo em relação ao topo da página
-                    behavior: 'smooth'
-                });
-            }
+      if (targetElement) {
+        // Role suavemente para o elemento alvo
+        const headerHeight = 128
+        window.scrollTo({
+          top: targetElement.offsetTop - headerHeight, // Altura do elemento alvo em relação ao topo da página
+          behavior: 'smooth'
         });
+      }
     });
+  });
 }
 
 function loadCategories() {
-    const mainFlavors = document.getElementsByClassName('mainFlavors')
+  const mainFlavors = document.getElementsByClassName('mainFlavors')
 
-    const availableCategories = categories
+  const availableCategories = categories
 
-    availableCategories.map((category) => {
-        const cardContainer = document.createElement('div');
-        cardContainer.classList.add('cardContainer');
+  availableCategories.map((category) => {
+    const cardContainer = document.createElement('div');
+    cardContainer.classList.add('cardContainer');
 
-        const img = document.createElement('img');
-        img.src = `../../assets/categories/${category.img}`;
-        img.alt = category.title;
+    const img = document.createElement('img');
+    img.src = `../../assets/categories/${category.img}`;
+    img.alt = category.title;
 
-        const cardName = document.createElement('div');
-        cardName.classList.add('cardName');
-        cardName.innerHTML = `<p>${category.title}</p>`;
+    const cardName = document.createElement('div');
+    cardName.classList.add('cardName');
+    cardName.innerHTML = `<p>${category.title}</p>`;
 
-        cardContainer.appendChild(img);
-        cardContainer.appendChild(cardName);
+    cardContainer.appendChild(img);
+    cardContainer.appendChild(cardName);
 
-        mainFlavors[0].appendChild(cardContainer)
-    })
+    mainFlavors[0].appendChild(cardContainer)
+  })
 }
 
 loadCategories()
 
 function loadSales() {
-    const offers = document.getElementsByClassName('offers')
+  const offers = document.getElementsByClassName('offers')
 
-    for (var i = 0; i < 4; i++) {
-        const cardOffers = document.createElement('div')
-        cardOffers.classList.add('cardOffers')
+  for (var i = 0; i < 4; i++) {
+    const cardOffers = document.createElement('div')
+    cardOffers.classList.add('cardOffers')
 
-        const cakeId = document.createElement('h1')
-        cakeId.innerHTML = `#${i+1}`
+    const cakeId = document.createElement('h1')
+    cakeId.innerHTML = `#${i + 1}`
 
-        const img = document.createElement('img')
-        img.src = `../../assets/cake_image.png`
-        img.alt = 'Foto de um bolo'
+    const img = document.createElement('img')
+    img.src = `../../assets/cake_image.png`
+    img.alt = 'Foto de um bolo'
 
-        const paragraph = document.createElement('p')
-        paragraph.innerHTML = `${bolos[i].titulo}`
+    const paragraph = document.createElement('p')
+    paragraph.innerHTML = `${bolos[i].titulo}`
 
-        const button = document.createElement('button')
-        button.innerHTML = "Peça agora"
+    const button = document.createElement('button')
+    button.innerHTML = "Peça agora"
 
-        cardOffers.appendChild(cakeId)
-        cardOffers.appendChild(img)
-        cardOffers.appendChild(paragraph)
-        cardOffers.appendChild(button)
-        
-        offers[0].appendChild(cardOffers)
-    }
+    cardOffers.appendChild(cakeId)
+    cardOffers.appendChild(img)
+    cardOffers.appendChild(paragraph)
+    cardOffers.appendChild(button)
 
-    for (var i = 4; i < bolos.length; i++) {
-        const cardOffers = document.createElement('div')
-        cardOffers.classList.add('cardOffers')
+    offers[0].appendChild(cardOffers)
+  }
 
-        const cakeId = document.createElement('h1')
-        cakeId.innerHTML = `#${i+1}`
+  for (var i = 4; i < bolos.length; i++) {
+    const cardOffers = document.createElement('div')
+    cardOffers.classList.add('cardOffers')
 
-        const img = document.createElement('img')
-        img.src = `../../assets/cake_image.png`
-        img.alt = 'Foto de um bolo'
+    const cakeId = document.createElement('h1')
+    cakeId.innerHTML = `#${i + 1}`
 
-        const paragraph = document.createElement('p')
-        paragraph.innerHTML = `${bolos[i].titulo}`
+    const img = document.createElement('img')
+    img.src = `../../assets/cake_image.png`
+    img.alt = 'Foto de um bolo'
 
-        const button = document.createElement('button')
-        button.innerHTML = "Peça agora"
+    const paragraph = document.createElement('p')
+    paragraph.innerHTML = `${bolos[i].titulo}`
 
-        cardOffers.appendChild(cakeId)
-        cardOffers.appendChild(img)
-        cardOffers.appendChild(paragraph)
-        cardOffers.appendChild(button)
-        
-        offers[1].appendChild(cardOffers)
-    }
+    const button = document.createElement('button')
+    button.innerHTML = "Peça agora"
+
+    cardOffers.appendChild(cakeId)
+    cardOffers.appendChild(img)
+    cardOffers.appendChild(paragraph)
+    cardOffers.appendChild(button)
+
+    offers[1].appendChild(cardOffers)
+  }
 }
 
 loadSales()
 
-// function loadFlavors() {
-//     const offers = document.getElementsByClassName('offers')
-
-//     console.log('hehehe')
-//     for (var i = 0; i < 4; i++) {
-//         const cardOffers = document.createElement('div')
-//         cardOffers.classList.add('cardOffers')
-
-//         const cakeId = document.createElement('h1')
-//         cakeId.innerHTML = `#${i+1}`
-
-//         const img = document.createElement('img')
-//         img.src = `../../assets/cake_image.png`
-//         img.alt = 'Foto de um bolo'
-
-//         const paragraph = document.createElement('p')
-//         paragraph.innerHTML = `${bolos[i].titulo}`
-
-//         const button = document.createElement('button')
-//         button.innerHTML = "Peça agora"
-        
-
-//         cardOffers.appendChild(cakeId)
-//         cardOffers.appendChild(img)
-//         cardOffers.appendChild(paragraph)
-//         cardOffers.appendChild(button)
-        
-//         offers[0].appendChild(cardOffers)
-//     }
-// }
-
 function redirect() {
-    window.location.href = '../login'
+  window.location.href = '../login'
 }
