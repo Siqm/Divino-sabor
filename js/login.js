@@ -15,7 +15,7 @@ function setupLoginForm() {
             errorMessage.style.color = "green";
             loginSucced = true
 
-            localStorage.setItem("@divino-sabor: Authenticated", {email: user.email, cart: []})
+            localStorage.setItem("@divino-sabor: Authenticated", JSON.stringify({email: user.email, cart: []}))
         }
     })
 

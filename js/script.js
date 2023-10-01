@@ -1,9 +1,22 @@
 
+const logged = localStorage.getItem('@divino-sabor: Authenticated')
 
 document.addEventListener('DOMContentLoaded', function () {
   smoothScroll();
 
 });
+
+const carrinho = document.getElementById('carrinho')
+
+carrinho.addEventListener('click', () => {
+  if (!!logged) {
+    window.location.href = `../modal/index.html?kart=true`
+  } else {
+    alert('Você precisa fazer login primeiro')
+  }
+})
+
+
 
 function smoothScroll() {
   // Selecione todos os links <a> com href começando com #
@@ -97,6 +110,17 @@ function loadSales() {
 
     const button = document.createElement('button')
     button.innerHTML = "Peça agora"
+
+    const parsedBolo = JSON.stringify(bolos[i])
+    button.addEventListener('click', () => {
+
+      if (!!logged) {
+        window.location.href = `../modal/index.html?bolo=${encodeURIComponent(parsedBolo)}`
+      } else {
+        alert("Você precisa fazer login primeiro")
+      }
+
+    })
 
     cardOffers.appendChild(cakeId)
     cardOffers.appendChild(img)
