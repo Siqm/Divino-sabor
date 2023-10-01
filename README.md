@@ -16,8 +16,8 @@ O problema era criar um website com as ferramentas HTML, CSS e Javascript.
 - [x] Utilização de classes e IDs para melhor organização.
 - [ ] Aplicação de transições ou animações para tornar o site mais dinâmico e atraente.
 3. JavaScript (Funcionalidades):
-- [ ] Validação dos formulários de cadastro e login.
-- [ ] Manipulação do DOM para exibir dinamicamente os detalhes dos produtos.
+- [x] Validação dos formulários de cadastro e login.
+- [x] Manipulação do DOM para exibir dinamicamente os detalhes dos produtos.
 - [ ] Possibilidade de adicionar e deletar produtos/serviços ao carrinho e adicionar e diminuir quantidade.
 - [ ] Finalização da compra (não é necessário integração real com métodos de pagamento, mas sim uma
 simulação).
