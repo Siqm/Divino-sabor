@@ -97,19 +97,19 @@ button {
 
 .login-container {
     width: 30vw;
-    height: 450px;
+    height: 360px;
     background: #FFE7F9;
     border-radius: 20px;
-    margin-top: 180px;
+    margin-top: 160px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .login-icon {
-    width: 15vw;
-    height: 100px;
-    margin: 50px 0 25px;
+    width: 10vw;
+    height: 75px;
+    margin: 20px 0 0px;
 
 }
 
@@ -160,8 +160,6 @@ button {
     line-height: 24px;
     word-wrap: break-word;
     cursor: pointer;
-
-    
 }
 
 .login-options input {
