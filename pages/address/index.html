@@ -1,89 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saito-sama | Cadastro</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <!-- <link rel="stylesheet" type="text/css" href="../home/styles.css"> -->
+  <link rel="stylesheet" href="styles.css">
+  <title>Saito Sama | Onde nos encontrar</title>
 </head>
 
 <body>
+
   <header>
+
     <div class="logoContainer">
       <img src="../../assets/logo_Image.svg" alt="Logo Confeitaria Divino Sabor">
       <h1 class="header-title">Divino sabor</h1>
     </div>
 
     <nav>
+
       <ul>
+
         <li>
           <a href="/pages/home">Produtos | </a>
         </li>
+
         <li>
-          <a href="/pages/address">Onde Encontrar | </a>
+          <a href="#/">Onde Encontrar | </a>
         </li>
+
       </ul>
 
       <img onclick="redirect()" class="btn-login" src="../../assets/btn_Login_Done.svg" alt="">
+
     </nav>
 
   </header>
 
-  <div class="login-container">
-    <img class="login-icon" src="../../assets/login_Icon.svg" alt="">
+  <div class="container">
+    <h1>Onde nos encontarar?</h1>
 
-    <div class="login-interaction">
-      <form id="login-form" onsubmit="registerNewUser(event)">
-
-        <label class="login-input-label" for="username">Nome</label><br>
-        <input 
-          class="login-input" 
-          type="text" 
-          placeholder="Digite seu nome" 
-          name="name" 
-          id="register-name"
-          required
-        ><br>
-
-        <label class="login-input-label" for="email">Email</label><br>
-        <input 
-          class="login-input" 
-          type="email" 
-          placeholder="Digite seu E-mail" 
-          name="email" 
-          id="register-email"
-          required
-        ><br>
-
-        <label class="login-input-label" for="password">Senha</label><br>
-        <input 
-          class="login-input" 
-          type="password" 
-          placeholder="Digite sua Senha" 
-          name="password" 
-          id="register-password"
-          required
-        ><br>
-
-        <label class="login-input-label" for="password">
-          Endereço 
-        </label><br>
-        <input 
-          class="login-input" 
-          type="text" 
-          placeholder="Digite seu endereço" 
-          name="address"
-          id="register-address" 
-          required
-        ><br>
-        <p id="error-message" class="error-message"></p>
-
-        <input type="submit" value="Cadastrar" class="submit-register">
-      </form>
-
+    <div class="mapBox">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.832579244208!2d-46.89553378832488!3d-23.21277124879231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf27bb621ea5f7%3A0x890f0e17af7293f7!2sUNIANCHIETA!5e0!3m2!1spt-BR!2sbr!4v1696107806596!5m2!1spt-BR!2sbr"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+
+    <h2>Av. Dr. Adoniro Ladeira, 94 - Vila Nova Jundiainopolis, Jundiaí - SP, 13210-795</h2>
   </div>
 
   <footer>
@@ -144,10 +107,9 @@
 
     </div>
 
-
   </footer>
 
-  <script src="../../js/register.js"></script>
+  <script src="../../js/script.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    list-style: none;
+    text-decoration: none;
+    transition: .2s;
     font-family: sans-serif;
     list-style: none;
+    text-decoration: none;
 }
 
-a {
-    text-decoration: none;
+body::-webkit-scrollbar {
+    width: 10px;
+    background: #FFE1F8;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #41271F;
+    box-shadow: 0px 0px 6px 6px rgba(52, 31, 25, 0.25) inset;
 }
 
 header {
@@ -60,6 +71,7 @@ header nav ul {
 header nav ul li a {
     font-size: 16px;
     font-weight: 400;
+    display: flex;
     line-height: 24px;
     margin-right: 20px;
     font-style: none;
@@ -67,51 +79,52 @@ header nav ul li a {
     color: #000;
 }
 
+header nav ul li a img {
+    width: 26px;
+}
+
+
 header nav img {
     width: 30px;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+img[src="../../assets/banner_Saito 2.svg"] {
+    width: 100vw;
+    margin-top: 128px;
+    z-index: 999 !important;
 }
 
-button {
-    width: 10vw;
-    height: 35px;
-    background: #41271F; 
-    border-radius: 10px;
-    font-size: 16px;
-    color: white;
-}
-
-.whatsapp {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 50px;
-    right: 30px;
-}
-
-.whatsapp img {
-    width: 100%;
-}
-
-.whatsapp:hover {
-    transform: scale(1.1);
-}
-
-.btn-login:hover {
-    cursor: pointer;
-}
-
-.collaboratorsContainer {
-    height: 70%;
+.container {
+    margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* position: relative; */
+    z-index: 0;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-family: Oleo Script;
+
+}
+
+.container h2 {
+    margin-top: 30px;
+    font-family: Oleo Script;
+}
+
+.mapBox {
+    /* position: relative; */
+    width: 600px;
+    height: 500px;
+    background: white;
+}
+
+.mapBox iframe {
+    width: 100%;
+    height: 100%;    
 }
 
 footer {
@@ -168,93 +181,6 @@ footer h1 {
     width: 20px;
 }
 
-.header-title {
-    color: black;
-    font-size: 21px;
-    font-family: Open Sans;
-    font-weight: 700;
-    line-height: 31.50px;
-    word-wrap: break-word
-}
-
-.login-container {
-    width: 30vw;
-    height: 360px;
-    background: #FFE7F9;
-    border-radius: 20px;
-    margin-top: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-icon {
-    width: 10vw;
-    height: 75px;
-    margin: 20px 0 0px;
-
-}
-
-.login-input-label {
-    color: #41271F;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 31.50px;
-    word-wrap: break-word
-}
-
-.login-input {
-    width: 25vw;
-    height: 10px;
-    background: #67524C;
-    border-radius: 10px;
-    border: 1px #41271F solid;
-    outline: none;
-
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 24px;
-    padding: 12px;
-    color: white;
-
-    margin-bottom: 16px;
-}
-
-.login-input::placeholder {
-    color: white;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 24px;
-    word-wrap: break-word;
-}
-
-.login-help {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.login-options {
-    color: black;
-    font-size: 16px;
-    font-family: Open Sans;
-    font-weight: 400;
-    line-height: 24px;
-    word-wrap: break-word;
+.btn-login:hover {
     cursor: pointer;
-}
-
-.login-options input {
-    cursor: pointer;
-}
-
-.login-buttons {
-    margin-top: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.error-message {
-    font-size: 14px;
 }
