@@ -9,6 +9,11 @@
     transition: .2s;
 }
 
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
 body::-webkit-scrollbar {
     width: 10px;
     background: #FFE1F8;
@@ -70,6 +75,7 @@ header nav ul {
 header nav ul li a {
     font-size: 16px;
     font-weight: 400;
+    display: flex;
     line-height: 24px;
     margin-right: 20px;
     font-style: none;
@@ -77,18 +83,23 @@ header nav ul li a {
     color: #000;
 }
 
+header nav ul li a img {
+    width: 26px;
+}
+
+
 header nav img {
     width: 30px;
 }
 
 img[src="../../assets/banner_Saito 2.svg"] {
-    width: 100%;
+    width: 100vw;
     margin-top: 128px;
     z-index: 999 !important;
 }
 
 section {
-    width: 100%;
+    width: 100vw;
     height: 96px;
     background: #FFE1F8;
     display: flex;
@@ -371,4 +382,67 @@ footer h1 {
 
 .collaboratorsContainer .collaborators img {
     width: 20px;
+}
+
+
+@media screen and (min-width: 820px) {
+
+    header {
+        padding: 0 50px;
+    }
+
+    header h1 {
+        display: none;
+    }
+
+    img[src="../../assets/banner_Saito 2.svg"] {
+        width: 847px !important;
+    }
+
+
+    section {
+        width: 847px;
+    }
+    .mainFlavorsContainer {
+        width: 820px;
+        display: none;
+    }
+
+    .mainFlavorsContainer .mainFlavors {
+        width: 820px;
+
+    }
+
+    .titleOffers {
+        width: 847px;
+    }
+
+    .offersContainer .offers { 
+        width: 847px;
+    }
+
+    .offersContainer {
+        width: 820px;
+    }
+
+    .offersContainer .offers .cardOffers {
+        width: 252px;
+        margin: 10px 15px;
+    }
+
+    footer {
+        width: 847px;
+        justify-content: space-between;
+        padding: 0 50px;
+    }
+
+    footer h1 {
+        display: none;
+    }
+
+    h2 {
+        width: 700px;
+        font-size: 20px;
+    }
+
 }
