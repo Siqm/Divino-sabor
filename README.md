@@ -27,7 +27,7 @@ O problema era criar um website com as ferramentas HTML, CSS e Javascript.
 simulação).
 
 1. Inovação:
-- [ ] Cada grupo deve buscar uma abordagem inovadora, seja na estruturação, na usabilidade ou nas
+- [x] Cada grupo deve buscar uma abordagem inovadora, seja na estruturação, na usabilidade ou nas
 funcionalidades adicionais que não estão listadas nos requisitos acima.
 
 1. Funcionalidades Básicas:
@@ -35,7 +35,7 @@ funcionalidades adicionais que não estão listadas nos requisitos acima.
 mínimo 8 caracteres, uma letra maiúscula e minúscula, números e caractere especial (não ser
 sequencial em nenhum quesito)
 - [x] Login usando e-mail e senha.
-- [ ] Visualização de produtos/serviços
+- [x] Visualização de produtos/serviços
 - [ ] Adição e manutenção de produtos/serviços ao carrinho.
 - [ ] Finalização da compra com uma página de confirmação.
 - [ ] Insira dados mockados em código para que teste todas as funções de cadastros.

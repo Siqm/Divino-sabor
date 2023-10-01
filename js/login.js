@@ -10,15 +10,16 @@ function setupLoginForm() {
     console.log(localUsers)
 
     localUsers.map((user) => {
-        console.log('user', user);
         if (user.email === email.value && user.password === password.value) {
-            errorMessage.textContent = "Login bem-sucedido!";
+            errorMessage.textContent = "Login bem-sucedido! Redirecionando em 5s";
             errorMessage.style.color = "green";
             loginSucced = true
+
+            localStorage.setItem("@divino-sabor: Authenticated", {email: user.email, cart: []})
         }
     })
 
-    if (loginSucced) {
+    if (!loginSucced) {
         errorMessage.textContent = "Usuário ou senha inválidos.";
         errorMessage.style.color = "red";
         username.value = ""
@@ -27,11 +28,10 @@ function setupLoginForm() {
         setTimeout(() => {
             window.location.href = '../home'
         }, 5000);
-        return
     }
 }
 
 function openRegisterPage() {
     window.location.href = '../register'
-  }
+}
   
