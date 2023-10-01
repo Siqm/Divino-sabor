@@ -1,4 +1,4 @@
-export const bolos = [
+const bolos = [
     {
         titulo: "Bolo de Chocolate",
         descricao: "Um bolo rico e indulgente feito com cacau de alta qualidade e coberto com ganache de chocolate meio amargo."
@@ -80,3 +80,22 @@ export const bolos = [
         descricao: "Um bolo de morango com camadas de chocolate branco e morangos frescos na cobertura."
     }
 ];
+
+const categories = [
+    {
+        title: 'Bolos',
+        img: 'bolo.png',
+    },
+    {
+        title: 'Doces',
+        img: 'doces.png',
+    },
+    {
+        title: 'Tortas',
+        img: 'paes.png',
+    },
+    {
+        title: 'Pães',
+        img: 'tortas.png',
+    },
+]

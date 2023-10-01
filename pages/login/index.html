@@ -6,36 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saito-sama</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../home/styles.css"> -->
 </head>
 
 <body>
   <header>
-    <img src="../../assets/logo-bolos.png" alt="Logo Confeitaria Divino Sabor">
-    <h1 class="header-title">Divino sabor</h1>
 
-    <div class="header-interactions">
+    <div class="logoContainer">
+      <img src="../../assets/logo_Image.svg" alt="Logo Confeitaria Divino Sabor">
+      <h1 class="header-title">Divino sabor</h1>
+    </div>
+
+    <nav>
+
       <ul>
+
         <li>
-          <a href="#/">Produtos</a>
+          <a href="/pages/home">Produtos | </a>
         </li>
 
         <li>
-          <a href="#/">Onde Encontrar</a>
+          <a href="#/">Onde Encontrar | </a>
         </li>
 
         <li>
-          <a href="#/">Contato</a>
+          <a href="#/">Contato | </a>
         </li>
+
       </ul>
 
-      <div class="header-pesquisar">
-        <!-- <input placeholder="Pesquise aqui..." type="text"> -->
-        <p class="pesquisar-inner">
-          <input placeholder="Pesquise aqui" type="text"><img src="../../assets/" alt="svg-lupa de pesquisa">
-        </p>
-      </div>
+      <img onclick="redirect()" class="btn-login" src="../../assets/btn_Login_Done.svg" alt="">
 
-    </div>
+    </nav>
+
   </header>
 
   <div class="login-container">
@@ -44,34 +47,24 @@
     <div class="login-interaction">
       <form id="login-form">
         <label class="login-input-label" for="username">Login</label><br>
-        <input 
-          class="login-input" 
-          type="text" 
-          placeholder="E-mail"
-          name="username"
-          id="username"
-          required
-        ><br>
+        <input class="login-input" type="text" placeholder="E-mail" name="username" id="username" required><br>
 
         <label class="login-input-label" for="password">Senha</label><br>
-        <input 
-          class="login-input" 
-          type="text" 
-          placeholder="Senha"
-          name="password"
-          id="password"
-          required
-          ><br>
+        <input class="login-input" type="text" placeholder="Senha" name="password" id="password" required><br>
       </form>
-      <p id="error-message"></p>
+      <p id="error-message" class="error-message"></p>
 
-      <a class="login-options" href="">Esqueceu a senha?</a>
+      <div class="login-help">
+        <a class="login-options" href="">Esqueceu a senha?</a>
 
 
-      <label class="login-options" for=""><input type="checkbox">Lembrar senha</label><br>
-
-      <button onclick="setupLoginForm()">Login</button>
-      <button>Cadastrar-se</button>
+        <label class="login-options" for=""><input type="checkbox">Lembrar senha</label>
+      </div>
+      
+      <div class="login-buttons">
+        <button onclick="setupLoginForm()">Login</button>
+        <button>Cadastrar-se</button>
+      </div>
     </div>
   </div>
 
