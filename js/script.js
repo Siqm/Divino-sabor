@@ -86,6 +86,17 @@ function loadSales() {
     const button = document.createElement('button')
     button.innerHTML = "Peça agora"
 
+    const parsedBolo = JSON.stringify(bolos[i])
+    button.addEventListener('click', () => {
+
+      if (!!logged) {
+        window.location.href = `../modal/index.html?bolo=${encodeURIComponent(parsedBolo)}`
+      } else {
+        alert("Você precisa fazer login primeiro")
+      }
+
+    })
+
     cardOffers.appendChild(cakeId)
     cardOffers.appendChild(img)
     cardOffers.appendChild(paragraph)
