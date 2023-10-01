@@ -243,3 +243,18 @@ body {
     font-style: normal;
     font-weight: 700;
 }
+
+.modalContainer h1 {
+    color: #41271F;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 76.5px;
+}
+
+img[src="../../assets/checkMark.svg"] {
+    width: 200.29px;
+    margin-bottom: 20%;
+}
