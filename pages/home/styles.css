@@ -190,7 +190,6 @@ h2 span {
 
 .offersContainer {
     width: 1140px;
-    height: 578px;
     margin: auto;
 }
 
@@ -220,10 +219,9 @@ h2 span {
 
 .offersContainer .offers {
     width: 100%;
-    height: 432px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .offersContainer .offers .cardOffers {
@@ -235,6 +233,7 @@ h2 span {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 10px 21px 10px 0;
 }
 
 .offersContainer .offers .cardOffers h1 {
