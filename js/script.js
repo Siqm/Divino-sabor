@@ -6,6 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+const logo = document.getElementsByClassName('logoContainer')[0]
+logo.addEventListener('click', () => {
+  window.location.href = '../home'
+})
+
 const carrinho = document.getElementById('carrinho')
 
 carrinho.addEventListener('click', () => {
@@ -147,3 +152,4 @@ loadSales()
 function redirect() {
   window.location.href = '../login'
 }
+

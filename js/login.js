@@ -35,3 +35,12 @@ function openRegisterPage() {
     window.location.href = '../register'
 }
   
+
+function redirect() {
+    window.location.href = '../login'
+  }
+
+  const logo = document.getElementsByClassName('logoContainer')[0]
+logo.addEventListener('click', () => {
+  window.location.href = '../home'
+})
