@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <header>
 
     <div class="logoContainer">
@@ -20,12 +21,22 @@
     <nav>
 
       <ul>
+
         <li>
-          <a href="/pages/home">Produtos | </a>
+          <a id="carrinho">
+            <img src="../../assets/icon_Cart.svg" alt="">
+            <p>Carrinho</p>
+          </a>
         </li>
+
         <li>
-          <a href="#/">Onde Encontrar | </a>
+          <a href="#products-menu">Produtos | </a>
         </li>
+
+        <li>
+          <a href="/pages/address/">Onde Encontrar | </a>
+        </li>
+
       </ul>
 
       <img onclick="redirect()" class="btn-login" src="../../assets/btn_Login_Done.svg" alt="">
@@ -34,30 +45,17 @@
 
   </header>
 
+
   <div class="login-container">
     <img class="login-icon" src="../../assets/login_Icon.svg" alt="">
 
     <div class="login-interaction">
       <form id="login-form">
         <label class="login-input-label" for="username">Login</label><br>
-        <input 
-          class="login-input" 
-          type="text" 
-          placeholder="E-mail" 
-          name="username" 
-          id="username" 
-          required
-        ><br>
+        <input class="login-input" type="text" placeholder="E-mail" name="username" id="username" required><br>
 
         <label class="login-input-label" for="password">Senha</label><br>
-        <input 
-          class="login-input" 
-          type="password" 
-          placeholder="Senha" 
-          name="password" 
-          id="password" 
-          required
-        ><br>
+        <input class="login-input" type="password" placeholder="Senha" name="password" id="password" required><br>
       </form>
       <p id="error-message" class="error-message"></p>
 
@@ -81,11 +79,11 @@
         <p>David Santos</p>
 
         <div class="icons">
-          <a href="">
+          <a target="_blank" href="https://www.linkedin.com/in/david-henrique-b5704526b/">
             <img src="../../assets/linkedin.svg" alt="">
           </a>
 
-          <a href="">
+          <a target="_blank" href="https://github.com/DavidSantos5992">
             <img src="../../assets/icon_GitHub.svg" alt="">
           </a>
         </div>
@@ -97,13 +95,30 @@
         <p>Thomas Roncoleta</p>
 
         <div class="icons">
-          <a href="" target="_blank">
+          <a href="https://www.linkedin.com/in/thomas-roncoleta-966139224/" target="_blank">
             <img src="../../assets/linkedin.svg" alt="">
           </a>
 
-          <a href="" target="_blank">
+          <a href="https://github.com/ThomasRoncoleta" target="_blank">
             <img src="../../assets/icon_GitHub.svg" alt="">
           </a>
+        </div>
+
+      </div>
+
+      <div class="collaborators">
+
+        <p>Miguel Oliveira</p>
+
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/fabio-miguel-guedes-de-oliveira-50b9a1161/" target="_blank">
+            <img src="../../assets/linkedin.svg" alt="">
+          </a>
+
+          <a href="https://github.com/MiguelitoGO" target="_blank">
+            <img src="../../assets/icon_GitHub.svg" alt="">
+          </a>
+          
         </div>
 
       </div>
@@ -125,7 +140,6 @@
       </div>
 
     </div>
-
 
   </footer>
 
