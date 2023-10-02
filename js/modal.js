@@ -89,7 +89,7 @@ function addCake() {
 
         const addedBolo = {
             titulo: bolo.titulo,
-            preco: bolo.preco,
+            preco: priceValue,
         }
         authData.cart.push(addedBolo)
 
@@ -118,7 +118,7 @@ function loadPrice() {
     items.map((bolo) => {
         total += bolo.preco
     })
-    return total
+    return total.toFixed(2)
 }
 
 function finishOrder() {
@@ -140,41 +140,43 @@ function finishOrder() {
     cartP.textContent = "Carrinho";
     cartDiv.appendChild(cartP);
 
-
     const stored = JSON.parse(localStorage.getItem("@divino-sabor: Authenticated"))
-    console.log('stored', stored);
-    stored.cart.map((bolo) => {
-        const requestsContainerDiv = document.createElement("div");
-        requestsContainerDiv.className = "requestsContainer";
-    
-        // Crie um elemento div para a classe "requests" e adicione elementos p dentro dele
-        const requestsDiv = document.createElement("div");
+    const requestsContainerDiv = document.createElement("div");
+    requestsContainerDiv.className = "requestsContainer";
+
+    // Declare a variável requestsDiv fora do loop
+    let requestsDiv;
+
+    // Percorra o array de bolos e crie elementos "requests" para cada objeto
+    stored.cart.forEach((bolo) => {
+        requestsDiv = document.createElement("div");
         requestsDiv.className = "requests";
-        const request1P = document.createElement("p");
-        request1P.textContent = "bolo de milho";
-        const request2P = document.createElement("p");
-        request2P.textContent = "2kg";
-        const request3P = document.createElement("p");
-        request3P.textContent = "R$ 100,00";
+
+        // Crie elementos "p" com os dados do bolo
+        const tituloP = document.createElement("p");
+        tituloP.textContent = bolo.titulo;
+
+        const precoP = document.createElement("p");
+        precoP.textContent = bolo.preco;
+
+        // Crie um botão "excluir"
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "excluir";
-    
+
         // Adicione event listener para o botão "excluir"
         deleteButton.addEventListener("click", () => {
             // Remova o elemento "requestsDiv" quando o botão "excluir" for clicado
             requestsContainerDiv.removeChild(requestsDiv);
         });
-    
-        requestsDiv.appendChild(request1P);
-        requestsDiv.appendChild(request2P);
-        requestsDiv.appendChild(request3P);
+
+        // Adicione os elementos criados ao "requestsDiv"
+        requestsDiv.appendChild(tituloP);
+        requestsDiv.appendChild(precoP);
         requestsDiv.appendChild(deleteButton);
 
-    })
-
-    // Crie um elemento div para a classe "requestsContainer"
-
-
+        // Adicione o "requestsDiv" ao "requestsContainerDiv"
+        requestsContainerDiv.appendChild(requestsDiv);
+    });
 
     // Crie um elemento div para a classe "total" e adicione um elemento p dentro dele
     const totalDiv = document.createElement("div");
@@ -194,22 +196,77 @@ function finishOrder() {
     buttonsContainerDiv.appendChild(clearButton);
     buttonsContainerDiv.appendChild(confirmButton);
 
+    confirmButton.addEventListener('click', () => {
+        var newData = stored
+        newData.cart = []
+        localStorage.setItem("@divino-sabor: Authenticated", JSON.stringify(newData))
+
+        const paymentCompleteDiv = document.createElement("div");
+        paymentCompleteDiv.className = "modalContainer";
+
+        const exitDiv = document.createElement("div");
+        exitDiv.className = "exit";
+        const exitP = document.createElement("p");
+        exitP.textContent = "x";
+        exitDiv.appendChild(exitP);
+
+        // Adicione um título
+        const titleH1 = document.createElement("h1");
+        titleH1.textContent = "Pagamento Concluído";
+
+        // Adicione uma imagem
+        const checkMarkImg = document.createElement("img");
+        checkMarkImg.src = "../../assets/checkMark.svg";
+        checkMarkImg.alt = "";
+
+        // Adicione um botão "voltar"
+        const backButton = document.createElement("button");
+        backButton.className = "confirmButton";
+        backButton.textContent = "voltar";
+
+        // Event listener para o botão "voltar"
+        backButton.addEventListener("click", () => {
+            // Remova o elemento de pagamento concluído e limpe a página
+            window.location.href = '/pages/home'
+        });
+
+        // Adicione todos os elementos ao elemento de pagamento concluído
+        paymentCompleteDiv.appendChild(exitDiv);
+        paymentCompleteDiv.appendChild(titleH1);
+        paymentCompleteDiv.appendChild(checkMarkImg);
+        paymentCompleteDiv.appendChild(backButton);
+
+        // Remova todos os elementos da página
+        const body = document.body;
+        while (body.firstChild) {
+            body.removeChild(body.firstChild);
+        }
+
+        // Adicione o elemento de pagamento concluído ao documento
+        document.body.appendChild(paymentCompleteDiv);
+    })
+
+    clearButton.addEventListener('click', () => {
+        var newData = stored
+        newData.cart = []
+        localStorage.setItem("@divino-sabor: Authenticated", JSON.stringify(newData))
+        alert('Carrinho limpado com sucesso')
+        window.location.href = '/pages/home'
+    })
+
     // Adicione todos os elementos criados ao "modalContainer"
     modalContainer.appendChild(exitDiv);
     modalContainer.appendChild(cartDiv);
-    requestsContainerDiv.appendChild(requestsDiv);
-    modalContainer.appendChild(requestsContainerDiv);
+    modalContainer.appendChild(requestsContainerDiv); // Adicione requestsContainerDiv, não requestsDiv
     modalContainer.appendChild(totalDiv);
     modalContainer.appendChild(buttonsContainerDiv);
 
     // Adicione o "modalContainer" ao documento (à sua página)
     document.body.appendChild(modalContainer);
-
-
 }
 
+
 if (kart) {
-    
     finishOrder()
 } else {
     addCake(bolo)
